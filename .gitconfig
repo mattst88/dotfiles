@@ -6,3 +6,5 @@
 	ui = auto
 [rebase]
 	autosquash = true
+[core]
+	excludesfile = /home/mattst88/.global_ignore
