@@ -23,12 +23,9 @@ setopt hist_ignore_space
 # Breaks "eix ^asdf"
 # setopt extendedglob
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[1~" beginning-of-line
-bindkey "^[OH" beginning-of-line
-bindkey "^[[F"  end-of-line
-bindkey "^[[4~" end-of-line
-bindkey "^[OF" end-of-line
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
 bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^R' history-incremental-search-backward
 
@@ -44,13 +41,6 @@ bindkey "^[3;5~" delete-char
 bindkey "\e[3~" delete-char
 
 export PATH=:$PATH:~/bin
-
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-	. "${HOME}/.gpg-agent-info"
-	export GPG_AGENT_INFO
-	export SSH_AUTH_SOCK
-fi
-export GPG_TTY=$(tty)
 
 . /etc/profile.d/autojump.sh
 . /etc/profile.d/vte-2.91.sh
