@@ -42,5 +42,5 @@ bindkey "\e[3~" delete-char
 
 export PATH=:$PATH:~/bin
 
-. /etc/profile.d/autojump.sh
-. /etc/profile.d/vte-2.91.sh
+[ -e /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
+[ -e /etc/profile.d/vte-2.91.sh ] && . /etc/profile.d/vte-2.91.sh
