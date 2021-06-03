@@ -1,7 +1,6 @@
-vo=opengl
+vo=gpu
 hwdec=vaapi
 ao=pulse
-#opengl-backend=wayland
 
 demuxer-readahead-secs=30
-cache=200000
+cache=yes
