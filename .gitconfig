@@ -1,10 +1,19 @@
 [user]
 	email = mattst88@gmail.com
 	name = Matt Turner
-	signingkey = 0x0FDD682D974CA72A
+	signingkey = 0xED2ED19F85B3682C
 [color]
 	ui = auto
 [rebase]
 	autosquash = true
 [core]
 	excludesfile = /home/mattst88/.global_ignore
+[diff]
+	renames = true
+[push]
+	default = simple
+[alias]
+	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
+	co = checkout
+	shwo = show
+	grpe = grep
