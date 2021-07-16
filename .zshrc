@@ -45,10 +45,9 @@ bindkey "\e[3~" delete-char
 
 export PATH=:$PATH:~/bin
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-	. "${HOME}/.gpg-agent-info"
-	export GPG_AGENT_INFO
-	export SSH_AUTH_SOCK
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 export GPG_TTY=$(tty)
 
