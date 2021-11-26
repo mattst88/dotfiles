@@ -1,7 +1,9 @@
 [user]
 	email = mattst88@gmail.com
 	name = Matt Turner
-	signingkey = 0xED2ED19F85B3682C
+	signingkey = 0xACEB29740C9A4E97
+[includeIf "gitdir:~/projects/gentoo/"]
+	path = ~/projects/gentoo/.gitconfig
 [color]
 	ui = auto
 [rebase]
