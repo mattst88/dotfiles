@@ -1,0 +1,22 @@
+{
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
+  "python.linting.enabled": true,
+  "python.pythonPath": "/usr/bin/python",
+
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", ".git/"],
+      "initializationOptions": {
+         "highlight": {
+            "lsRanges": true
+         },
+         "cache": {
+           "directory": ".ccls-cache"
+         }
+      }
+    }
+  }
+}
