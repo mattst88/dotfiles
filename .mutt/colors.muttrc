@@ -1,0 +1,87 @@
+# vim: filetype=muttrc
+
+# basic colors ---------------------------------------------------------
+
+color normal        white           default         
+color error         brightred       default         
+#color tilde         color235        default         
+#color message       brightblack     default         
+#color markers       red             color254        
+#color attachment    color254        default         
+color search        brightwhite     default         
+color status        brightwhite     blue
+color indicator     black           brightgreen
+color tree          brightblue      default
+
+# basic monocolor screen
+mono  bold          bold
+mono  underline     underline
+mono  indicator     reverse
+mono  error         bold
+
+# index ----------------------------------------------------------------
+
+##color index         red             default         "~D(!~p|~p)"               # deleted
+##color index         color235        default         ~F                         # flagged
+##color index         color166        default         ~=                         # duplicate messages
+##color index         color240        default         "~A!~N!~T!~p!~Q!~F!~D!~P"  # the rest
+##color index         J_base          default         "~A~N!~T!~p!~Q!~F!~D"      # the rest, new
+#color index         red             default         "~A"                        # all messages
+#color index         color166        default         "~E"                        # expired messages
+color index         white           default         "~N"                        # new messages
+#color index         white           default         "~O"                        # old messages
+#color index         color61         default         "~Q"                        # messages that have been replied to
+color index         default         default         "~R"                        # read messages
+color index         white           default         "~U"                        # unread messages
+#color index         white           default         "~U~$"                      # unread, unreferenced messages
+#color index         brightblack     default         "~v"                        # messages part of a collapsed thread
+#color index         brightblack     default         "~P"                        # messages from me
+#color index         color37         default         "~p!~F"                     # messages to me
+#color index         color37         default         "~N~p!~F"                   # new messages to me
+#color index         color37         default         "~U~p!~F"                   # unread messages to me
+#color index         color240        default         "~R~p!~F"                   # messages to me
+#color index         red             default         "~F"                        # flagged messages
+#color index         red             default         "~F~p"                      # flagged messages to me
+#color index         red             default         "~N~F"                      # new flagged messages
+#color index         red             default         "~N~F~p"                    # new flagged messages to me
+#color index         red             default         "~U~F~p"                    # new flagged messages to me
+color index         brightblack     red             "~D"                        # deleted messages
+color index         default         default         "~v~(!~N)"                  # collapsed thread with no unread
+color index         brightwhite     default         "~v~(~N)"                   # collapsed thread with some unread
+## statusbg used to indicated flagged when foreground color shows other status
+## for collapsed thread
+#color index         red             color235        "~v~(~F)!~N"                # collapsed thread with flagged, no unread
+#color index         color136        color235        "~v~(~F~N)"                 # collapsed thread with some unread & flagged
+#color index         color64         color235        "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
+#color index         color64         color235        "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
+#color index         color37         color235        "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
+#color index         color136        red             "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
+##color index         color136        default         "~(~N)"                    # messages in threads with some unread
+##color index         color64         default         "~S"                       # superseded messages
+##color index         red             default         "~T"                       # tagged messages
+##color index         color166        red             "~="                       # duplicated messages
+#
+# message headers ------------------------------------------------------
+
+color header        brightwhite     default         "^(From|Subject):"
+
+# body -----------------------------------------------------------------
+
+color quoted        default         default         
+#color quoted1       color37         default         
+#color quoted2       color136        default         
+#color quoted3       red             default         
+#color quoted4       color166        default         
+#
+#color signature     color240        default         
+#color bold          color235        default         
+#color underline     color235        default         
+#color normal        color244        default         
+
+## PGP
+
+color body          brightblack     default         " +aka:.*"
+color body          brightgreen     default         "^Good signature .*"
+color body          brightwhite     red             "^\\*BAD\\* signature from.*"
+mono  body          bold                            "^Good signature"
+mono  body          bold                            "^\\*BAD\\* signature from.*"
