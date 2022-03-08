@@ -51,5 +51,12 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 
-[ -e /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
-[ -e /etc/profile.d/vte-2.91.sh ] && . /etc/profile.d/vte-2.91.sh
+FILES=(
+	/etc/profile.d/autojump.sh
+	/etc/profile.d/vte-2.91.sh
+	/usr/share/fzf/key-bindings.zsh
+)
+
+for file in "${FILES[@]}"; do
+	[[ -e $file ]] && . "${file}"
+done
