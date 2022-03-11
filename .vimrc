@@ -10,3 +10,4 @@ autocmd BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwid
 set bg=dark
 set modeline
 set number relativenumber
+set colorcolumn=+0
