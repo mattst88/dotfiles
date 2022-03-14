@@ -4,7 +4,7 @@ source ~/.vimrc
 source ~/.config/nvim/coc.vim
 
 call plug#begin()
-Plug 'junegunn/vim-plug'
+Plug 'airblade/vim-rooter'
 Plug 'bogado/file-line'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'google/vim-searchindex'
@@ -12,6 +12,7 @@ Plug 'igankevich/mesonic'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'jamessan/vim-gnupg'
 Plug 'javier-lopez/sprunge.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
