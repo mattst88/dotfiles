@@ -6,22 +6,27 @@ set from="mattst88@gmail.com"
 macro generic "<esc>1" ":set from=mattst88@gmail.com"
 macro generic "<esc>2" ":set from=mattst88@gentoo.org"
 
-alternative_order text/enriched text/html text/plain
+alternative_order text/plain text/enriched text/html
 auto_view text/x-vcard text/html text/enriched
 
 set mbox_type = Maildir
 set folder    = "~/.mail"
-set mbox      = "+intel/Inbox"
-set record    = "+intel/Sent Items"
-set postponed = "+intel/Drafts"
-set spoolfile = "+intel/Inbox"
-set trash     = "+intel/Deleted Items"
+#set mbox      = "+intel/Inbox"
+#set record    = "+intel/Inbox"
+set postponed = "+mattst88@gmail.com/Drafts"
+set spoolfile = "+mattst88@gmail.com/INBOX"
+set trash     = "+archive-mattst88@gmail.com/Trash"
 
-mailboxes = \
-+intel/Inbox \
-+intel/Sent\ Items \
-+intel/Drafts \
-+intel/Deleted\ Items
+named-mailboxes "Inbox"			=mattst88@gmail.com/INBOX
+named-mailboxes "Drafts"		=mattst88@gmail.com/Drafts
+named-mailboxes "Sent"			=mattst88@gmail.com/Sent
+named-mailboxes "alpha-contacts"	=mattst88@gmail.com/alpha-contacts
+named-mailboxes "craigslist"		=mattst88@gmail.com/craigslist
+named-mailboxes "forum-notifications"	=mattst88@gmail.com/forum-notification
+named-mailboxes "gentoo-comrel"		=mattst88@gmail.com/gentoo-comrel
+named-mailboxes "gentoo-core"		=mattst88@gmail.com/gentoo-core
+named-mailboxes "gentoo-council"	=mattst88@gmail.com/gentoo-council
+named-mailboxes "to-vacuum"		=mattst88@gmail.com/to-vacuum
 
 set header_cache=~/.mutt/hcache
 set mail_check_stats
@@ -36,32 +41,48 @@ bind index,pager \ck sidebar-prev
 bind index,pager \cj sidebar-next
 bind index,pager \Co sidebar-open
 
-set alias_file= ~/.mutt/aliases
-source $alias_file
-
 set sendmail="/usr/bin/msmtp"
 
-### PGP
+#set record=~/.mail/Sent
+#set spoolfile=~/.mail/INBOX
+
+# needed for maildir format
+# IMAP and INBOX (this should map to any existing IMAP folders)
+#mailboxes = +intel/INBOX +intel/Sent
+#=Drafts \
+#=Junk \
+#=Trash \
+#=Lastfolder
+
 set crypt_use_gpgme=yes
 
-# Automatically sign all outgoing messages
-set crypt_autosign=yes
-
-# Automatically verify the sig of a message when opened
-set crypt_verify_sig=yes
-
-# Automatically sign replies to messages which are signed
-# Automatically encrypt replies to messages which are encrypted
-# Automatically sign replies to messages which are encrypted
-set crypt_replysign=yes
-set crypt_replyencrypt=yes
-set crypt_replysignencrypted=yes
-
-folder-hook . `rm -f /tmp/mutt/*`
+### PGP
+set pgp_sign_as=0x3BB639E56F861FA2E86505690FDD682D974CA72A
+#set pgp_auto_decode = yes
+#set pgp_use_gpg_agent = yes
+#set pgp_autosign=yes
+#set pgp_replyencrypt=yes
+#
+#set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+#set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
+#set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+#set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+#set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+#set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x974CA72A -- -r %r -- %f"
+#set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x974CA72A -- -r %r -- %f"
+#set pgp_import_command="gpg --no-verbose --import -v %f"
+#set pgp_export_command="gpg --no-verbose --export --armor %r"
+#set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
+#set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r"
+#set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
+#
+#set pgp_timeout=1800
+#set pgp_good_sign="^gpg: Good signature from"
+#
+#folder-hook . `rm -f /tmp/mutt/*`
 
 # Basic Options --------------------------------------
 set wait_key = no        # shut up, mutt
-set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
 unset move               # gmail does that
@@ -87,15 +108,23 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Format for index list
-set index_format = "%4C %Z %[%d/%b]  %-16.15F %?M?(%3M)&     ? %s %>"
+#   [message status flags]
+#   Date sent (in my timezone)
+#   20 characters of who it's from
+#   Number of attachment (if > 0)
+#   Subject
+#set index_format = "[%Z]  %D  %-20.20F  %?X?%X& ?  %?M?[%M]->&?%s"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set index_format="%4C %Z %?GI?%GI& ? %[%d/%b]  %-16.15F %?M?(%3M)&     ? %s %> %?g?%g?"
 
 macro index F "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 
 # Index Key Bindings ---------------------------------
-bind index gg       first-entry
-bind index G        last-entry
-bind index R        group-reply
-bind index <tab>    sync-mailbox
+bind index g  noop
+bind index gg first-entry
+bind index G  last-entry
+bind index R  group-reply
+bind index <tab> sync-mailbox
 bind index P recall-message
 
 # Pager View Options ---------------------------------
@@ -121,6 +150,7 @@ hdr_order from: to: cc: date: subject:  # and in this order
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
 bind pager j  next-line
+bind pager g  noop
 bind pager gg top
 bind pager G  bottom
 bind pager R  group-reply
@@ -150,7 +180,4 @@ set sig_on_top                       # puts signature above quoted text
 # set display_filter = ~/.mutt/display_filter.sh
 set copy = yes
 
-set mailcap_path = ~/.mutt/mailcap
-
-source ~/.mutt/colors.muttrc
-#source /etc/mutt/notmuch-mutt.rc
+#source ~/.mutt/colors.muttrc
