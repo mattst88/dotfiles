@@ -17,5 +17,7 @@
 [alias]
 	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 	co = checkout
+	br = branch
 	shwo = show
 	grpe = grep
+	lgo = log
