@@ -180,4 +180,5 @@ set sig_on_top                       # puts signature above quoted text
 # set display_filter = ~/.mutt/display_filter.sh
 set copy = yes
 
-#source ~/.mutt/colors.muttrc
+source ~/.mutt/colors.muttrc
+source ~/.mutt/aliases
