@@ -21,3 +21,5 @@
 	shwo = show
 	grpe = grep
 	lgo = log
+[init]
+	defaultBranch = main
