@@ -8,3 +8,5 @@
 	gpgsign = if-asked
 [commit]
 	gpgsign = 1
+[sendemail]
+	to = gentoo-dev@lists.gentoo.org
