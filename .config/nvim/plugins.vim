@@ -17,6 +17,7 @@ Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'vim-scripts/git_patch_tags.vim'
 Plug 'Yggdroot/indentLine'
 call plug#end()
