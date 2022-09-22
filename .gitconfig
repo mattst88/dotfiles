@@ -10,6 +10,9 @@
 	autosquash = true
 [core]
 	excludesfile = /home/mattst88/.global_ignore
+	autocrlf = false
+	filemode = false
+	pager = less -+F
 [diff]
 	renames = true
 [push]
