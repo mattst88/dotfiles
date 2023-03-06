@@ -46,6 +46,7 @@ bindkey "\e[3~" delete-char
 
 export PATH=:$PATH:~/bin
 
+alias pkgdiff="pkgdiff-mg"
 alias grpe="grep"
 alias gti="git"
 alias sl="ls"
