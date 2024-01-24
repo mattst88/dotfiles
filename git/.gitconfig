@@ -24,5 +24,6 @@
 	shwo = show
 	grpe = grep
 	lgo = log
+	last-commit-to = log -n 1 --pretty=format:%H
 [init]
 	defaultBranch = main
