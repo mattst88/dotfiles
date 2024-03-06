@@ -17,6 +17,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export FZF_TMUX=1
+export FZF_TMUX_OPTS='-p90%,80%'
 export EDITOR=nvim
 export HISTSIZE=5000
 export HISTFILE="$HOME/.history"
