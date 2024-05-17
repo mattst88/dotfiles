@@ -27,3 +27,11 @@
 	last-commit-to = log -n 1 --pretty=format:%H
 [init]
 	defaultBranch = main
+[fixup]
+	menu = fzf --height '60%' \
+		--bind 'tab:toggle-preview' \
+		--bind 'space:preview-page-down' \
+		--preview 'git show --color {+1}' \
+		--preview-window=up:80% \
+		--preview-window cycle \
+		--prompt 'Select commit: '
