@@ -7,6 +7,7 @@ ZSH_THEME="gentoo"
 plugins=(
 	autojump
 	colored-man-pages
+	fd
 	fzf
 	git
 	gpg-agent
