@@ -28,7 +28,7 @@ named-mailboxes "gentoo-core"		=mattst88@gmail.com/gentoo-core
 named-mailboxes "gentoo-council"	=mattst88@gmail.com/gentoo-council
 named-mailboxes "to-vacuum"		=mattst88@gmail.com/to-vacuum
 
-set header_cache=~/.mutt/hcache
+set header_cache=~/.cache/mutt/hcache
 set mail_check_stats
 
 # sidebar
@@ -180,5 +180,5 @@ set sig_on_top                       # puts signature above quoted text
 # set display_filter = ~/.mutt/display_filter.sh
 set copy = yes
 
-source ~/.mutt/colors.muttrc
-source ~/.mutt/aliases
+source colors.muttrc
+source aliases
