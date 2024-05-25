@@ -34,3 +34,6 @@ alias pkgdiff="pkgdiff-mg"
 alias grpe="grep"
 alias gti="git"
 alias sl="ls"
+
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
