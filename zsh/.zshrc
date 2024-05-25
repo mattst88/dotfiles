@@ -33,6 +33,7 @@ export PATH=:$PATH:~/bin
 alias pkgdiff="pkgdiff-mg"
 alias grpe="grep"
 alias gti="git"
+alias mkdir="mkdir -p"
 alias sl="ls"
 
 bindkey  "^[[1~"   beginning-of-line
