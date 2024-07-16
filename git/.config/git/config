@@ -24,6 +24,8 @@
 	grpe = grep
 	lgo = log
 	last-commit-to = log -n 1 --pretty=format:%H
+	git = !exec git
+	gti = !exec git
 [init]
 	defaultBranch = main
 [fixup]
