@@ -2,7 +2,7 @@ vim.g.table_mode_corner = "|"
 
 -- Put simply configured plugins here.
 return {
-  { "lukas-reineke/indent-blankline.nvim", version = "v3.5.4", main = "ibl", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", version = "v3.6.3", main = "ibl", opts = {} },
   {
     "Mofiqul/adwaita.nvim",
     lazy = false,
