@@ -7,13 +7,11 @@ ZSH_THEME="gentoo"
 plugins=(
 	autojump
 	colored-man-pages
-	fd
 	fzf
 	git
 	gpg-agent
 	mosh
 	pass
-	ripgrep
 )
 
 source $ZSH/oh-my-zsh.sh
