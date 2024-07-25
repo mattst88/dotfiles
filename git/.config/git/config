@@ -19,6 +19,7 @@
 [alias]
 	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 	co = checkout
+	cp = cherry-pick
 	br = branch
 	shwo = show
 	grpe = grep
