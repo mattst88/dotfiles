@@ -39,3 +39,5 @@
 		--preview-window=up:80% \
 		--preview-window cycle \
 		--prompt 'Select commit: '
+[commit]
+	verbose = true
