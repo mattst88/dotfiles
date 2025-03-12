@@ -8,6 +8,8 @@
 	ui = auto
 [rebase]
 	autosquash = true
+	autostash = true
+	updaterefs = true
 [core]
 	autocrlf = false
 	filemode = false
@@ -16,8 +18,13 @@
 	renames = true
 	srcprefix = ./
 	dstprefix = ./
+	algorithm = histogram
+	colormoved = true
 [push]
 	default = simple
+	autosetupremote = true
+[pull]
+	rebase = true
 [alias]
 	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 	co = checkout
@@ -41,3 +48,7 @@
 		--prompt 'Select commit: '
 [commit]
 	verbose = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
