@@ -2,6 +2,7 @@ vim.g.table_mode_corner = "|"
 
 -- Put simply configured plugins here.
 return {
+  { "fladson/vim-kitty", ft = "kitty" },
   { "lukas-reineke/indent-blankline.nvim", version = "v3.6.3", main = "ibl", opts = {} },
   {
     "Mofiqul/adwaita.nvim",
