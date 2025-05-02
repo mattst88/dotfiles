@@ -33,6 +33,8 @@ alias grpe="grep"
 alias gti="git"
 alias mkdir="mkdir -p"
 alias sl="ls"
+[[ $(command -v fdfind) ]] && alias fd=fdfind
+[[ $(command -v nvim) ]] && alias vi=nvim
 
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
