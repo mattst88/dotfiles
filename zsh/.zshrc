@@ -28,6 +28,9 @@ setopt share_history
 
 export PATH=:$PATH:~/bin
 
+export CMAKE_GENERATOR=Ninja
+export CMAKE_EXPORT_COMPILE_COMMANDS=ON
+
 alias pkgdiff="pkgdiff-mg"
 alias grpe="grep"
 alias gti="git"
