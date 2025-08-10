@@ -1,3 +1,11 @@
+-- Make the clipboard automatically copy bidirectional
+vim.opt.clipboard:append({'unnamedplus'})
+
+-- Disable providers I never use and cause warnings in checkhealth
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- show line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -30,30 +38,6 @@ vim.keymap.set('n', '<Leader>E', vim.diagnostic.setloclist)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local options = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD',                 vim.lsp.buf.declaration, options)
-    vim.keymap.set('n', 'gd',                 vim.lsp.buf.definition, options)
-    vim.keymap.set('n', 'K',                  vim.lsp.buf.hover, options)
-    vim.keymap.set('n', 'gi',                 vim.lsp.buf.implementation, options)
-    vim.keymap.set('n', '<C-k>',              vim.lsp.buf.signature_help, options)
-    vim.keymap.set('n', '<c-\\>c',            vim.lsp.buf.incoming_calls, options)
-    vim.keymap.set({'n', 'v'}, '<Leader>ca',  vim.lsp.buf.code_action, options)
-    vim.keymap.set('n', '<Leader>rn',         vim.lsp.buf.rename, options)
-    vim.keymap.set('n', '<c-\\>g',            vim.lsp.buf.references, options)
-    vim.keymap.set('n', '<space>f', function ()
-      vim.lsp.buf.format{ async = true }
-    end, options)
-  end,
-})
-
 vim.o.termguicolors = true
+
+vim.g.table_mode_corner = "|"
