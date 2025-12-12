@@ -1,4 +1,4 @@
 return {
 	cmd = { 'marksman', 'server' },
-	filetypes = { ' markdown' },
+	filetypes = { 'markdown' },
 }
