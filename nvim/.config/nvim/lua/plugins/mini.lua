@@ -43,7 +43,7 @@ return {
 				{ '<leader>gs', '<cmd>lua MiniGit.show_at_cursor()<cr>',    mode = 'n',                     desc = '[G]it [S]how' },
 				{ '<leader>gs', '<cmd>lua MiniGit.show_at_cursor()<cr>',    mode = 'x',                     desc = '[G]it [S]how' },
 				{ '<leader>gr', '<cmd>lua MiniGit.show_range_history()<cr>',    mode = 'n',                     desc = '[G]it [R]ange history' },
-				{ '<leader>gr', '<cmd>lua MiniGit.show_rangehistory()<cr>',    mode = 'x',                     desc = '[G]it [R]ange history' },
+				{ '<leader>gr', '<cmd>lua MiniGit.show_range_history()<cr>',    mode = 'x',                     desc = '[G]it [R]ange history' },
 				{ '<leader>ga', '<cmd>Git add -- %<cr>',                    desc = '[G]it [A]dd' },
 			},
 		},
