@@ -35,7 +35,7 @@ return {
 				require('mini.git').setup(opts)
 			end,
 			keys = {
-				{ '<leader>gb', '<cmd>vert Git blame -- %<cr>',		    desc = '[G]it [B]lame in a split' },
+				{ '<leader>gb', '<cmd>vert Git blame -- %<cr>',             desc = '[G]it [B]lame in a split' },
 				{ '<leader>gc', '<cmd>Git commit<cr>',                      desc = '[G]it [C]ommit' },
 				{ '<leader>gC', '<cmd>Git commit --amend<cr>',              desc = '[G]it [C]ommit (Amend)' },
 				{ '<leader>gl', '<cmd>Git log --oneline<cr>',               desc = '[G]it [L]og' },
