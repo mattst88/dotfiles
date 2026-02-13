@@ -26,7 +26,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt share_history
 
-export PATH="$PATH:~/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 export CMAKE_GENERATOR=Ninja
 export CMAKE_EXPORT_COMPILE_COMMANDS=ON
