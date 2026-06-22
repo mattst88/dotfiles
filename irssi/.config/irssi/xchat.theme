@@ -468,5 +468,6 @@ formats = {
     awl_display_key_active = "%K$N%n $H%U$C%n$S ";
     awl_display_header = "";
     awl_display_nokey_active = "%K$N%n $H%U$C%n$S ";
+    awl_viewer_item_bg = "";
   };
 };
