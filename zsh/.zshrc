@@ -31,6 +31,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export CMAKE_GENERATOR=Ninja
 export CMAKE_EXPORT_COMPILE_COMMANDS=ON
 
+# Run Claude Code's commands under bash rather than zsh.
+export CLAUDE_CODE_SHELL=/bin/bash
+
 alias pkgdiff="pkgdiff-mg"
 alias grpe="grep"
 alias gti="git"
