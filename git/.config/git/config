@@ -52,3 +52,5 @@
 	sort = -committerdate
 [tag]
 	sort = version:refname
+[sendemail]
+	smtpserver = /usr/bin/msmtp
