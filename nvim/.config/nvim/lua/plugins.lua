@@ -12,7 +12,28 @@ return {
 			vim.cmd("colorscheme adwaita")
 		end
 	},
-	{ "norcalli/nvim-terminal.lua", opts = {} },
+	-- Justification: Render ANSI color codes, e.g. in saved logs
+	{
+		"m00qek/baleia.nvim",
+		version = "*",
+		cmd = "BaleiaColorize",
+		ft = "terminal",
+		config = function()
+			local baleia = require("baleia").setup({})
+
+			vim.api.nvim_create_user_command("BaleiaColorize", function()
+				baleia.once(vim.api.nvim_get_current_buf())
+			end, {})
+
+			-- `:setl ft=terminal` worked with nvim-terminal.lua; keep it.
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "terminal",
+				callback = function(args)
+					baleia.once(args.buf)
+				end,
+			})
+		end,
+	},
 	{
 		"kylechui/nvim-surround",
 		event = "VeryLazy",
