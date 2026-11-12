@@ -41,10 +41,6 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
 			callback = function(args)
-				-- Set by bigfile.nvim for files over its size limit.
-				if vim.b[args.buf].bigfile_disable_treesitter then
-					return
-				end
 				-- Returns false (or errors) if no parser is installed for
 				-- this filetype.
 				if not pcall(vim.treesitter.start, args.buf) then

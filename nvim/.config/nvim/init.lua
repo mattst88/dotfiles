@@ -14,4 +14,7 @@ require("config.lsp")
 -- Random
 require("config.misc")
 
+-- Turn off expensive features for large files
+require("config.bigfile")
+
 vim.cmd[[colorscheme adwaita]]
